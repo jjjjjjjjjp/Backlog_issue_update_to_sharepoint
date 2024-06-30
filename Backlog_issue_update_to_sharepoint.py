@@ -13,19 +13,28 @@ SHAREPOINT_SITE_URL = "https://your_sharepoint_site_url"
 CLIENT_ID = "your_client_id"
 CLIENT_SECRET = "your_client_secret"
 
-# プロジェクトIDごとに異なるカスタムフィールドを設定
+# プロジェクトIDごとに異なるカスタムフィールドを設定(BacklogAPIの返り値を見て修正)
 PROJECT_CUSTOM_FIELDS = {
-    123: [{"customField_1": 789, "customField_2": 1011}],  # プロジェクトID 123のカスタムフィールド
-    456: [{"customField_3": 1112, "customField_4": 1314}],  # プロジェクトID 456のカスタムフィールド
-    # 追加のプロジェクトとカスタムフィールドの組み合わせをここに追加
+    123: [ # NEC
+            {
+                "customField_1": 789, # 23B
+                "customField_2": 1011 # 24A
+            }
+         ],  
+    234: [ # NOKIA
+            {
+                "customField_1": 789, # 23B
+                "customField_2": 1011 # 24A
+            }
+         ],  
 }
 
 # プロジェクトとカスタムフィールドの組み合わせに対するファイルとシートの紐づけを設定
 PROJECT_FILE_SHEET_MAPPING = {
-    123: {
-        (789, 1011): {
+    123: { # NEC
+        (789, 1011): { # 23B
             "file": "/sites/your_site/Shared Documents/your_excel_file1.xlsx",
-            "sheet": "Sheet1"
+            "sheet": "Sheet1" 
         }
     },
     456: {
